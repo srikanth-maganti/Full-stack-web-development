@@ -1,0 +1,48 @@
+#container{
+    height:500px;
+    width:30%;
+    border:2px solid black;
+    margin:20px auto;
+    display:flex;
+    flex-direction:row;
+   /* justify-content:flex-end;*/
+  /* justify-content:space-between;*/
+  justify-content:flex-start;
+  flex-wrap:nowrap;
+ /* flex-wrap:wrap-reverse;*/
+ /*align-items:center;*/
+ /*align-items:baseline;*/
+ /*align-content:flex-start;*/
+ /*align-content:space-around;*/
+ align-content:flex-start;
+    
+
+}
+#orange{
+    align-self:flex-start;
+    /*flex-basis:50px;*/
+    /*flex-grow:2;*/
+   /* max-width:400px*/
+  /* flex-shrink:1;*/
+ 
+  
+
+}
+
+#blue
+{
+   /* flex-grow:1;*/
+    /*min-width:200px*/
+   /* flex-shrink:2;*/
+   flex:1 2 50px;
+   
+}
+h1{
+    text-align:center;
+}
+
+#container div{
+    height:100px;
+    width:100px;
+    color:white;
+}

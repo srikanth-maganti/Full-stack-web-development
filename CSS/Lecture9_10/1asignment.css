@@ -1,0 +1,54 @@
+#outer
+{
+    
+    height:400px;
+    width:400px;
+    border:2px solid blue;
+    border-radius:20px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    align-content:space-evenly;
+
+}
+
+#outer div{
+    height:100px;
+    width:100px;
+    font-size:50px;
+    text-align:center;
+    background-color: grey;
+    border:2px solid black;
+    border-radius:10px;
+
+}
+
+#out
+{
+    height: 50px;
+    width:900px;
+    border:2px solid blue;
+    border-radius:10px;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    background-color:pink;
+    align-content:center;
+    
+    
+
+
+
+}
+
+#out div{
+    height:50px;
+    width:80px;
+    font-size:24px;
+    margin-left:20px;
+    line-height:40px;
+    
+    
+
+}

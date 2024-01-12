@@ -1,0 +1,28 @@
+h1{
+    color:red;
+    background-color:blue;
+}
+
+h2{
+    color:red;
+    background-color:blue;
+}
+
+p{
+    color:blue;
+    background-color:cornsilk;
+
+}
+
+button{
+    color:green;
+    background:black;
+}
+
+h3{
+    color:magenta;
+}
+h4{
+    color:rgb(255,255,0);
+    background-color:#de1ba0;
+}

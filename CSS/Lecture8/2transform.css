@@ -1,0 +1,54 @@
+div{
+    height:100px;
+    width:200px;
+    border:2px solid black;
+    margin:10px;
+}
+div:nth-of-type(2n)
+{
+    background-color:red;
+
+}
+div:nth-of-type(2n-1)
+{
+    background-color:yellow;
+}
+#one
+{
+    transform:rotate(45deg);
+}
+#two
+{
+    transform:scale(0.5);
+}
+#three{
+    transform:translate(200px,100px);
+}
+#four
+{
+    transform:skew(30deg);
+}
+#five{
+
+    transform:rotate(30deg) translate(200px,30px );
+
+}
+
+#shadow
+{   height:100px;
+    width:200px;
+    background-color: yellow;
+    box-shadow:20px 20px 0px black;
+    margin:200px;
+}
+
+#image
+{
+    height:200px;
+    width:400px;
+    border:2px solid beige;
+    background-image:url("ironman.png");
+    background-size:cover;
+    color:white;
+
+}

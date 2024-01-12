@@ -1,0 +1,22 @@
+*
+{
+    font-family:'Courier';
+}
+h1
+{
+    color:#1b74e4;
+}
+.userbtn{
+    background-color:aqua;
+}
+
+#searchbtn
+{   color:#fff;
+    background-color:black;
+}
+/*
+#login ,#signup
+{
+    background-color:#1b74e4;
+}
+*/

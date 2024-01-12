@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+     <!--forms-->
+    <h1>LEVEL3</h1>
+     <button> outside form</button>
+     <form action="/action">
+          <label >
+   
+               name:
+             <input type="text">
+          </label>
+          <br>
+ 
+          <div>
+             <label for="age"> age:</label>
+             <input type="number" id="age" placeholder="enter age">
+          </div>
+         <br>
+ 
+         <div>
+              <label for="password">password:</label>
+             <input type="password" id="password" placeholder="enter password">
+         </div>
+        
+         <br>
+         <div>
+             <label for="date">dob:</label>
+             <input type="date" id="date" placeholder="enter date" />
+         </div>
+         <br>
+ 
+         <div>
+             <label>
+             fav color:
+             <input type="color" placeholder="selct color">
+             </label>
+         </div>
+         
+         <!--button  without type attribute all button are submit-->
+         <button type="submit">submit</button>
+         <button type="reset">reset</button>
+         <button type="button">normal</button>
+ 
+         <!--button  using input but not recommendable-->
+         <input type="button" value="clickme"/>
+         <input type="submit"/> 
+         </form>
+         <!--by default value submit-->
+ 
+ 
+         <!--name attribute for url-->
+         <br>
+         <br>
+         <br>
+         <hr>
+ 
+         <form action="/action">
+             <label>
+                 name:
+                 <input type="text" placeholder="enter name" name="username">
+              </label>
+              <br>
+              <label >
+                 password:
+                 <input type="password" name="password">
+              </label>
+            <button>submit</button>
+               
+         </form>
+ 
+ 
+         <br>
+         <br>
+         <br>
+         <hr>
+         
+         
+         <!--submitting to youtube-->
+         <form action="https://www.youtube.com/results">
+                 <div>
+                     <input type="text" name="search_query" placeholder="search here">
+                     <button>search</button>
+                  </div>
+         </form>
+ 
+         <br>
+         <br>
+         <br>
+         <hr>
+         
+         <!--selecting optionsss-->
+         <form action="/acion">
+             <div>
+                 <input type="radio" name="fruits" id="apple" value="apple"/>
+                 <label for="apple">apple</label>
+                 <input type="radio" name="fruits" id="mango" value="mango">
+                 <label for="mango">mango</label>
+                 <input type="radio" name="fruits" id="banana" value="banana">
+                 <label for="banana">banana</label>
+             </div>
+     
+     
+     
+             <br><br>
+     
+             <div>
+                 <input type="checkbox" name="sub" id="maths" value="maths" >
+                 <label for="maths"> maths</label>
+                 <input type="checkbox" name="sub" id="java" value="java">
+                 <label for="java">java</label>
+                 <input type="checkbox" name="sub" id="python" value="python">
+                 <label for="python">python</label>
+             </div>
+     
+     
+             <br><br>
+             <div>
+                 <select name="prof" id="prof">
+                     <option>select ur option</option>
+                     <option value="std">std</option>
+                     <option value="dev" selected>developer</option>
+                     <option value="doc">doctor</option>
+                 </select>
+             </div>
+     
+             <div>
+                 <label for="vol">audio volume</label>
+                 <input type="range" min="10" max="100" step="10" value="70" name="vol"/>
+             </div>
+             <br>
+             <div>
+                 <label for="feedback">enter ur feedback</label>
+                 <textarea id="feedback" name="feedback" rows="5" columns="50" placeholder="enter">hi</textarea>
+             </div>
+             <button>submit</button>
+         </form>
+    
+</body>
+</html>

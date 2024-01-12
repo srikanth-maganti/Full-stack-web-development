@@ -1,0 +1,72 @@
+h1
+{
+    font-family:'Roboto',sans-serif;
+}
+
+div
+{   text-align: center;
+    height: 100px;
+    width:200px;
+    background-color:pink;
+   /*animation-name:widthanimate;
+    animation-duration:2s;
+    animation-timing-function:ease-in-out;
+    animation-delay:0s;
+    animation-iteration-count:5;
+    animation-direction:alternate;
+*/
+    /*animation:fontanimate 2s ease-in-out 0s 5 alternate;*/
+
+    animation:colanimate 3s ease-in-out 0s infinite alternate;
+
+}
+
+@keyframes fontanimate
+{
+    from{
+        font-size:20px;
+
+    }
+    to
+    {
+        font-size:40px;
+    }
+
+}
+
+
+    @keyframes widthanimate
+    {
+        from {
+            width:20px;
+            background-color:pink;
+        }
+        to{
+            width:300px;
+            background-color:blue;
+            border-radius: 30px;
+        }
+    }
+
+    @keyframes colanimate
+    {
+        0%{
+            background-color:pink;
+        }
+        25%{
+            background-color:blue;
+
+        }
+        50%
+        {
+            background-color:red;
+        }
+        75%
+        {
+            background-color:yellow;
+        }
+        100%
+        {
+            background-color:orange;
+        }
+    }

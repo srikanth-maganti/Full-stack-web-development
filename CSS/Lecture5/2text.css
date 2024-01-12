@@ -1,0 +1,33 @@
+h1{
+    text-align:center;
+    font-weight:100;
+    text-decoration:  red double underline;
+    letter-spacing:10px;
+    font-size:60px;
+    font-family:avant garde,didot,sans-serif;
+
+}
+p{
+    text-align:justify;
+    font-weight:bold;
+    line-height:2.3;
+    
+
+}
+
+h2
+{   font-weight:normal;
+    text-align:end;
+    width:75%;
+    border:solid;
+    text-decoration:line-through;
+    text-decoration-style:solid;
+    text-decoration-color:green;
+    font-family:impact;
+
+
+}
+
+a{
+    text-decoration:none;
+}
