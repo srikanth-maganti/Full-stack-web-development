@@ -1,4 +1,6 @@
-let sum=99;//global scope]]]
+
+//function scope
+let sum=99;//global scope
 function calcsum(a,b)
 {
     let sum=a+b;//function scope
@@ -8,6 +10,8 @@ calcsum(2,3);
 console.log(sum);
 
 
+
+//block scope
 {
     let a=24;
 }
@@ -27,4 +31,36 @@ if(age>18)
 else{
     let str="not adult";
 }
-console.log(str);
+//console.log(str);
+
+
+//lexical scope
+function outer()
+{   let x=4;
+    let y=6;
+    function inner()
+    {   let a=4;
+        console.log(x);
+        console.log(y);
+    }
+    //console.log(a);  lexical scope
+    inner();
+}
+outer();
+
+
+function outter()
+{   
+    function inner()
+    {   let a=4;
+        console.log(x);
+        console.log(y);
+    }
+    //console.log(a);  lexical scope
+    let x=4;
+    let y=6;
+    inner();
+   
+    
+}
+outter();
