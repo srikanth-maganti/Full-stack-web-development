@@ -136,3 +136,19 @@ function concat(arr)
 
 let arr=["srikanth","maganti"];
 console.log(concat(arr));
+
+
+//default parameters
+function sum(a,b=2)
+{
+    return a+b;
+}
+console.log(sum(2));
+
+
+function add(a=2,b)
+{
+    return a+b;
+}
+console.log(add(2));//Nan
+console.log(add(2,3));//5
