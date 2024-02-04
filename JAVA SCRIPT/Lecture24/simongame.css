@@ -1,0 +1,40 @@
+.btn{
+    height:100px;
+    width:100px;
+    margin:20px;
+    border:8px solid #000000;
+    border-radius:1.5rem;
+    text-align: center;
+}
+
+.outer{
+    display:flex;
+    margin:auto;
+    width:fit-content;
+}
+
+body{
+   text-align: center;
+}
+
+.red{
+    background-color:red;
+}
+.yellow{
+    background-color:yellow;
+}
+
+.green
+{
+    background-color:green;
+
+}
+
+.pink{
+    background-color:pink;
+
+}
+
+.flash{
+    background-color:white;
+}
