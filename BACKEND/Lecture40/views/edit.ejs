@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>from:<%= reqchat.from%></p>
+    <p>to:<%=reqchat.to%></p>
+    <form action="/chats/<%= reqchat._id%>?_method=PUT" method="post">
+        <textarea name="msg" cols="30" rows="10"></textarea>
+        <button>submit</button>
+    </form>
+
+</body>
+</html>

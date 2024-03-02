@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Users details</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>edit</th>
+        </tr>
+        <% for(let i=0;i<users.length;i++){ %>
+  
+            <tr>
+                <td><%=users[i].username%></td>
+                <td><%=users[i].id%></td>
+                <td><%=users[i].email%></td>
+                <td>
+                    <form action="/user/<%=users[i].id%>/edit"method="get">
+                        <button>edit</button>
+                    </form>
+                    <td>
+                        <form action="/user/<%=users[i].id%>/delete">
+                            <button>delete</button>
+                        </form>
+                    </td>
+                    
+
+                </td>
+            </tr>
+                
+            
+           <%} %>
+           
+        
+    </table>
+
+    <form action="/user/new" method="get">
+        <button>
+            add new user
+        </button>
+    </form>
+    
+</body>
+</html>

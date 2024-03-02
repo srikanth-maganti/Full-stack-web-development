@@ -1,0 +1,10 @@
+<%-include("includes/head.ejs") %>
+<body>
+    <h1>your dice value: <%= dicevalue %></h1>
+    <% if(dicevalue==6){%>
+        <h2>roll again</h2>
+    <% } %>
+
+    <%- include("includes/foot.ejs") %>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<%- include("includes/head.ejs") %>
+<body>
+    <h1>welcome to @<%= data.name %></h1>
+    <button>follow</button>
+    <button>message</button>
+
+    <h3>Posts</h3>
+    <% for(post of data.posts){%>
+    <img src="<%=post.image%>" alt="random">
+    <p>
+        likes:<%=post.likes%>
+        &nbsp&nbsp&nbsp
+        comments:<%=post.comments%>
+    </p>
+    <% }%>
+
+    <%- include("includes/foot.ejs") %>
+    
+    
+</body>
+</html>
