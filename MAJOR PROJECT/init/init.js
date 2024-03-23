@@ -1,0 +1,32 @@
+const mongoose=require("mongoose");
+const initdata=require("./data.js");
+const listing=require("../models/listing.js");
+
+
+main().then((res)=>{
+    console.log("connected");
+})
+.catch((err)=>{
+    console.log("error");
+})
+async function main()
+{
+    await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+}
+
+let insertdb=async ()=>{
+  await listing.deleteMany({});
+ await listing.insertMany(initdata.data);
+ console.log("inserted");
+};
+
+
+insertdb().then((res)=>{
+    console.log("inserteed  ");
+
+})
+.catch((Err)=>{
+    console.log(Err);
+})
+
+
