@@ -10,8 +10,17 @@ const ExpressError=require("./utils/ExpressError.js");
 // const {listingschema,reviewsschema}=require("./schema.js");
 
 // const reviews=require("./models/review.js");
-const listings=require("./routes/listing.js");
-const Reviews=require("./routes/review.js");
+const listingsRouter=require("./routes/listing.js");
+const ReviewsRouter=require("./routes/review.js");
+const userRouter=require("./routes/user.js");
+
+
+const session=require("express-session");
+const flash=require("connect-flash");
+const passport=require("passport");
+const LocalStrategy=require("passport-local");
+const User=require("./models/user.js");
+
 
 
 
@@ -22,6 +31,26 @@ app.set("views",path.join(__dirname,"views"));
 app.engine("ejs",ejsmate);
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+
+let sessionoptions={
+    secret:"mysecretcode",
+    resave:false,
+    saveUninitialized:true,
+    cookie:{
+        expires:Date.now()+7*24*60*60*1000,
+        maxAge:7*24*60*60*1000,
+        httpOnly:true,
+    }
+};
+app.use(session(sessionoptions));
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //connection
 main()
@@ -48,14 +77,30 @@ app.get("/",(req,res)=>{
 });
 
 
+app.use((req,res,next)=>{
+    res.locals.success=req.flash("success");
+    res.locals.error=req.flash("error");
+    res.locals.curruser=req.user;
+    next()
+;})
 
 
+app.use("/listing",listingsRouter);
 
-app.use("/listing",listings);
+app.use("/listing/:id/reviews",ReviewsRouter);
+app.use("/",userRouter);
 
-app.use("/listing/:id/reviews",Reviews);
 
+// app.get("/demo",async(req,res)=>{
+//  let fakeuser=new User({
+//     email:"magantisrikanth45@gmail.com",
+//     username:"maganti",
+// });
 
+//  let newuser=await User.register(fakeuser,"hellomama");
+//  res.send(newuser);
+
+// })
 
 app.all("*",(req,res)=>{
     throw new ExpressError(404,"page not found");
