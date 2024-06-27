@@ -18,9 +18,9 @@
     border:2px solid black;
     transition-property:background-color;
     transition-duration:3s;
-    transition-timing-function:ease;
+    transition-timing-function:ease-in;
     transition-delay:1s;
-    transition:border-radius 3s ease-in-out 1s;
+    transition:border-radius 3s ease-in 1s;
 }
 
 #div1:hover{
@@ -35,11 +35,26 @@
     width:100px;
     background:yellow;
     margin:0 auto;
-    margin-top:20px;
-    transition:margin-top 2s step 0.2s;
+    margin-top:100px;
+    transition:margin-top 5s step 1s;
 }
 
 #move:hover{
     margin-top:300px;
     background:pink;
+}
+
+
+.prac{
+    height:100px;
+    width:100px;
+    border:2px solid black;
+    transition:height 2s step 1s;
+}
+
+.prac:hover{
+    height:200px;
+    
+    
+    
 }

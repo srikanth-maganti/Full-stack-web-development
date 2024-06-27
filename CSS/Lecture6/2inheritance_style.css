@@ -13,3 +13,11 @@ form{
 button:hover{
     background-color:red;
 }
+
+.hello{
+    color:red;
+}
+
+span{
+    color:green;
+}

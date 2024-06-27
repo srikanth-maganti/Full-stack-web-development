@@ -1,15 +1,15 @@
 const express=require("express");
 const app=express();
 //loooger
-app.use((req,res,next)=>{
-    req.time=new Date(Date.now());
-    console.log(
-        req.method,req.path,req.time
-    );
-    next();
-    // console.log(req.query);
-    // res.send("middleware");
-})
+// app.use((req,res,next)=>{
+//     req.time=new Date(Date.now());
+//     console.log(
+//         req.method,req.path,req.time
+//     );
+//     next();
+//     // console.log(req.query);
+//     // res.send("middleware");
+// })
 
 
 
@@ -39,6 +39,6 @@ app.listen(3000,()=>{
     console.log("server started listening to poprt 3000");
 })
 
-app.use((req,res)=>{
-    res.status(500).send("page not found");
-})
+// app.use((req,res)=>{
+//     res.status(500).send("page not found");
+// })

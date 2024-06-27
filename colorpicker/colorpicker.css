@@ -1,0 +1,67 @@
+.main
+{
+    
+    height:50vh;
+    display:grid;
+    width:75%;
+    
+    grid-template-columns:auto auto auto;
+    grid-template-rows:auto auto;
+    justify-items: center;
+    margin:auto;
+    margin-top:50px;
+   
+    
+
+    
+
+    
+}
+
+div{
+    border-radius:5px;
+}  
+
+
+.div1
+{
+    background-color:red;
+    margin-right:20px;
+    height:100px;
+    width:200px;
+    border:2px solid black;
+    transition-duration:0.7s;
+
+}
+.div2
+{
+    background-color:green;
+    margin-right:20px;
+    height:100px;
+    width:200px;
+    border:2px solid black;
+    transition-duration:0.7s;
+
+}
+.div3
+{
+    background-color:yellow;
+    margin-right:20px;
+    height:100px;
+    width:200px;
+    border:2px solid black;
+    transition-duration:0.7s;
+}
+
+
+body{
+    transition-duration:0.5s;
+}
+h1{
+    text-align: center;
+}
+
+.btn
+{
+    text-align: center;
+}
