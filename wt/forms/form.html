@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title> application form</title>
+</head>
+<body>
+
+    <div class="outer">
+        <form>
+            <div><h1 style="text-align:center">MESS FEEDBACK</h1></div>
+            <div class="in name">
+                <div >
+                    <label for="fname">Fname:</label>
+                    <input type="text" id="fname"/>
+                </div>
+                <div>
+                    <label for="lname">Lname:</label>
+                    <input type="text" id="lname"/>
+                </div>
+            </div>
+            <div class="in">
+                <label for="dob">Date of birth:</label>
+                <input type="text" id="dob"/>
+            </div>
+            <div class="in">
+                Gender:
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="other">Others
+            </div>
+            <div class="in"> 
+                <label for="branch">Branch:</label>
+                <select id="branch">
+                    <option>SELECT YOUR BRANCH</option>
+                    <option value="cse">computer science</option>
+                    <option value="ece">elctronic communication engineering</option>
+                    <option value="eee">electrical and electronics engeering </option>
+                    <option value="mech">mechanical engineering</option>
+                    <option value="civ">civil engineering</option>
+                </select>    
+            </div>
+            <div class="in main">
+                Favourite tiffin: 
+                <br>
+                <input type="checkbox">idly 
+                <input type="checkbox">vada <br>
+                <input type="checkbox">dosa  
+                <input type="checkbox">upma  
+            </div>
+            <div class="in mains">
+                <textarea name="feedback" id="feedback" cols="50" rows="7" placeholder="enter your feedback"></textarea>
+            </div>
+            <div class="final">
+
+                <button type="submit" >SUBMIT</button>
+                <button type="reset">RESET</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

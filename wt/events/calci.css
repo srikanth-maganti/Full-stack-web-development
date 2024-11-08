@@ -1,0 +1,42 @@
+h2{
+    text-align:center;
+    color:red;
+    background-color:antiquewhite;
+}
+.outer{
+    border:2px solid black;
+    margin:auto;
+    width:fit-content;
+    background-color:#ECF87F;
+    
+    box-shadow:2px 2px 10px black;
+    transition-duration:0.6s;
+    border-radius:5px;
+    margin-top:150px;
+   
+
+}
+.output{
+    width:auto;
+    height:30px;
+    border:1px solid blue;
+    margin:5px;
+    text-align:center;
+    background-color:white;
+}
+.btn{
+    text-align:center;
+}
+
+body{
+    background-image:url("360_F_472092463_biXCSvYsRVE8S05Ph7LbrxglfDr66MBE.webp");
+    background-size:auto ;
+    
+    
+}
+
+
+
+.outer:hover{
+    box-shadow:4px 4px 15px black;
+}

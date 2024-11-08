@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .div3
+        {
+            height:100px;
+            width:200px;
+            background-color:yellow;
+            position:relative;
+        }
+        .div1,.div2
+        {
+            height:100px;
+            background-color: grey;
+            border:2px solid black;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <button class="stop">stop</button>
+    <div class="div1">click here to slide</div>
+    <div class="div2">hello srikanth welcome to ur website</div>
+
+    <br><br><br>
+    
+    <button class="btn1">click me</button>
+    <div class="div3">animate me</div>
+    
+    
+    <script>
+        $(document).ready(()=>{
+            $(".div1").click(()=>{
+                $(".div2").slideUp("slow",()=>{
+                    $(".div2").slideDown("slow");
+                });
+            })
+            $(".stop").click(()=>{
+                $(".div1").stop();
+            })
+            $(".div2").click(()=>{
+                $(".div1").slideToggle(5000);
+            })
+
+            $(".btn1").click(()=>{
+                $(".div3").animate({
+                    height:"200px",
+                    width:"400px",
+                    left:"200px",
+
+                },"slow");
+            })
+        })
+    </script>
+</body>
+</html>

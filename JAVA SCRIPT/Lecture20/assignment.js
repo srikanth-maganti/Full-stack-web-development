@@ -20,15 +20,15 @@ let iseven=(n)=>{
 }
 console.log(iseven(5));
 
-//
-const object={
-    meassage:"hello",
-    logmessage(){
-        console.log(this.message);
-    }
-};
+// //
+// const object={
+//     meassage:"hello",
+//     logmessage(){
+//         console.log(this.message);
+//     }
+// };
 
-setTimeout(object.logmessage,1000);
+// setTimeout(object.logmessage,1000);
 
 
 //
@@ -36,7 +36,7 @@ setTimeout(object.logmessage,1000);
 let length=4;
 function callback()
 {
-    console.log(this.length);
+    console.log(this);
 };
 
 const object1={
@@ -44,6 +44,7 @@ const object1={
     method(callback)
     {
         callback();
+        console.log(this);
     },
 };
 object1.method(callback,1,2);

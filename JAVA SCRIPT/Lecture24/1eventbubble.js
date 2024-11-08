@@ -6,7 +6,7 @@ div.addEventListener("click",function(){
     console.log("div clicked");
 });
 ul.addEventListener("click",function(event){
-    event.stopPropagation();
+    // event.stopPropagation();
     console.log("ul clicked");
 });
 

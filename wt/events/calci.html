@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="calci.css">
+
+    
+</head>
+<body>
+    <h2><marquee>Mini calculator using Arithmetic operaters</marquee></h2>
+    <div class="outer">
+       <table cellspacing="10">
+        <tr>
+            <td><label for="num1">ENTER NUM1:</label></td>
+             <td><input type="number" id="num1"></td>
+        </tr>
+        <tr>
+            <td><label for="num2">ENTER NUM2:</label></td>
+            <td><input type="number" id="num2"></td>
+        </tr>
+        <tr>
+            <td><label for="sym">ENTER OPERATION SYMBOL:</label></td>
+            <td><select name="op" id="sym" style="width:175px;">
+                <option value="+">Addition(+)</option>
+                <option value="-">Substraction(-)</option>
+                <option value="*">Multiplication(*)</option>
+                <option value="**">Power(**)</option>
+                <option value="/">Division(/)</option>
+
+            </select></td>
+        </tr>
+        <tr>
+            <td  class="btn" colspan="2"><button>click me!</button></td>
+        </tr>
+       </table>
+       
+       <div class="output"></div>
+    </div>
+    <script src="calci.js"></script>
+</body>
+</html>

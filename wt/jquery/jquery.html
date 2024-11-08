@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display:flex;
+        justify-content: space-evenly;
+    }
+    div{
+        height:80px;
+        width:80px;
+        padding:50px;
+        border:2px solid black;
+        border-radius:5px;
+    }
+    #div1{
+        background:red;
+    }
+    #div2{
+        background:green;
+    }
+    #div3{
+        background:purple;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#div1").hover(()=>{
+            $("body").css("background-color","red");
+        })
+        $("#div2").hover(()=>{
+            $("body").css("background-color","green");
+        })
+        $("#div3").hover(()=>{
+            $("body").css("background-color","purple");
+        })
+    });
+
+
+</script>
+<body>
+    <div id="div1">
+        click me!!
+    </div>
+    <br>
+    <div id="div2">
+        click me!!
+    </div>
+    <br>
+    <div id="div3">
+        click me!!
+    </div>
+    
+</body>
+</html>

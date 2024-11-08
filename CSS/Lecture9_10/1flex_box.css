@@ -9,18 +9,19 @@
   /* justify-content:space-between;*/
   justify-content:flex-start;
   flex-wrap:nowrap;
- /* flex-wrap:wrap-reverse;*/
+ /* flex-wrap:wrap-reverse; */
  /*align-items:center;*/
- /*align-items:baseline;*/
- /*align-content:flex-start;*/
- /*align-content:space-around;*/
- align-content:flex-start;
+ /* align-items:baseline; */
+ /* align-content:flex-end; */
+ /* align-content:space-around; */
+
+align-items: flex-end;
     
 
 }
 #orange{
-    align-self:flex-start;
-    /*flex-basis:50px;*/
+    
+    flex-basis:100px;
     /*flex-grow:2;*/
    /* max-width:400px*/
   /* flex-shrink:1;*/

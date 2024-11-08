@@ -1,0 +1,62 @@
+<!-- attr("")
+attr("","")
+
+text()
+text("")
+
+addclass("") -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .design{
+            height: 100px;
+            width:100px;
+            border:2px solid black;
+
+        }
+        .color{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <p>hello</p>
+    <button class="btn1">change</button>
+
+    <br>
+    <img src="" alt="spidy">
+    <button class="btn2">change image</button>
+
+    <br>
+    <div>helloworld</div>
+    <button class="btn3">click to change div</button>
+    <script>
+        $(document).ready(()=>{
+            $(".btn1").click(()=>{
+                $("p").text("hello ekkadunav");
+            });
+
+           $(".btn2").click(()=>{
+            let x=$("img").attr("alt");
+            alert(x);
+
+            $("img").attr("alt","thor");
+           });
+           
+           $(".btn3").click(()=>{
+            $("div").addClass("design color");
+           })
+
+        })
+
+        
+    </script>
+
+</body>
+</html>

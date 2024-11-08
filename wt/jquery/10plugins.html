@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.greenify.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width:100px;
+            margin:2rem;
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>Maganti</div>
+    <div>Srikanth</div>
+
+    <button>click me</button>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("div").greenify();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -56,7 +56,7 @@ function outter()
         console.log(x);
         console.log(y);
     }
-    //console.log(a);  lexical scope
+    // console.log(a);  //lexical scope
     let x=4;
     let y=6;
     inner();

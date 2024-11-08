@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <p class="div1">
+        div1
+    </p>
+    <p class="div2">div2</p>
+    <p class="div3">div3</p>
+    <p class="div4">div4</p>
+
+    <input type="text" placeholder="name">
+    <input type="text" placeholder="class">
+
+    <script>
+
+    $(document).ready(()=>{
+        $(".div1").click(function () {
+            $(this).hide();
+        });
+
+        $(".div2").mouseenter(function (){
+            $(this).hide();
+        });
+
+        $(".div3").mouseleave(function ( ){
+            $(this).hide();
+        });
+
+        // $(".div4").hover(function(){
+        //         alert("entered");
+        // },function (){
+        //         alert("leaved");
+        // })
+
+        $("input").focus(function(){
+            $(this).css("background-color","yellow");
+        });
+
+        $("input").blur(function(){
+            $(this).css("background-color","green");
+        })
+    })
+       
+    </script>
+    
+</body>
+</html>

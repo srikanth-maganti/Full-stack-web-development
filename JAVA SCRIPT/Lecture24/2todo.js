@@ -16,7 +16,7 @@ btn.addEventListener("click",function()
 });
 
 //event delegation
-ul.addEventListener("click",function(event)
+ ul.addEventListener("click",function(event)
 {
     console.log(event.target);
     if(event.target.nodeName==="BUTTON")
@@ -25,16 +25,16 @@ ul.addEventListener("click",function(event)
         item.remove();
     }
 });
-/*
-let bb=document.querySelectorAll(".del");
-for(b of bb)
-{
-    b.addEventListener("click",function()
-    {
-        let parent=this.parentElement;
-        parent.remove();
 
-    });
-}*/
+// let bb=document.querySelectorAll(".del");
+// for(b of bb)
+// {
+//     b.addEventListener("click",function()
+//     {
+//         let parent=this.parentElement;
+//         parent.remove();
+
+//     });
+// }
 
 

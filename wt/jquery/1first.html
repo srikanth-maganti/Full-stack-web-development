@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>with *</h1>
+    <p>with tag name</p>
+    <p id="p1">with id selector</p>
+    <p class="p2">with class selector</p>
+    <a href="google.com">with href tag</a>
+    <br>
+    <button class="btn1">click me to hide all p tag</button>
+    <br>
+    <br>
+    <button class="btn2">click me to hide id</button>
+    <br>
+    <br>
+    <button class="btn3">click me to hide class</button>
+    <br>
+    <br>
+    <button class="btn4">click me to hide all</button>
+    <br>
+    <br>
+    <button class="btn5">click me to hide elmt with href</button>
+    <br>
+
+
+    <script>
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                $("p").hide();
+            })
+
+            $(".btn2").click(()=>{
+                $("#p1").hide();
+            })
+
+            $(".btn3").click(()=>{
+                $(".p2").hide();
+            })
+
+            $(".btn4").click(()=>{
+                $("*").hide();
+            })
+
+            $(".btn5").click(()=>{
+                $("[href]").hide();
+            })
+        })
+    </script>
+</body>
+</html>

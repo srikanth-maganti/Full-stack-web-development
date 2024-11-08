@@ -1,0 +1,46 @@
+.outer
+{
+    height:100vh;
+    width:50%;
+   /* border:2px solid blue;*/
+    margin:auto;
+    margin-top:50px;
+    background-color:aliceblue;
+    border-radius:4px;
+}
+
+.in
+{
+    margin-bottom:10px;
+    text-align:center;
+    border:1px solid black;
+    border-radius:4px;
+    box-shadow:2px 2px 8px #252525;
+    height:40px;
+    padding-top:10px;
+    transition-duration:1s;
+}
+.name
+{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+.in:hover{
+    box-shadow:4px 4px 8px #000;
+}
+
+.main
+{
+    height:60px;
+}
+
+.mains{
+    height:120px;
+}
+
+.final
+{
+    display:flex;
+    justify-content:space-evenly;
+}

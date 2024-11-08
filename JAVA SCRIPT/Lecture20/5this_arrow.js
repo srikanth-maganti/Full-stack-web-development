@@ -3,7 +3,7 @@ let student={
     marks:2010181,
     prop:this,//this this represents window object since it is global scope
     getname:function(){
-        //console.log(this.name);
+        console.log(this.name);
        // console.log(this);//this this represents calling object student
 
     },

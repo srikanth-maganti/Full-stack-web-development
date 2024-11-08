@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>hello</div>
+    <div>maganti
+    </div>
+    <div>srikanth</div>
+    <br>
+    <br>
+    <p>index0</p>
+    <p class="one">index1</p>
+    <p>index2</p>
+    <p class="one">index3</p>
+
+    <script>
+        $(document).ready(()=>{
+            $("div").first().css("color","red");
+            $("div").last().css("color","yellow");
+            $("div").eq(1).css("color","blue");
+
+            $("p").filter(".one").css("background-color","yellow");
+            $("p").not(".one").css("background-color","red");
+
+        })
+    </script>
+</body>
+</html>
