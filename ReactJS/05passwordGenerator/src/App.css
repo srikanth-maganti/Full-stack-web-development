@@ -1,0 +1,40 @@
+.main
+{
+  display:flex;
+  margin:auto;
+  width:600px;
+  height:fit-content;
+  border:2px solid black;
+  border-radius:4px;
+  flex-direction: column;
+
+}
+h1{
+  text-align: center;
+  color:red;
+}
+
+.output
+{
+  display:flex;
+
+}
+
+.password{
+  width:400px;
+  margin: 1rem;
+  height:2rem;
+}
+button{
+  height:2rem;
+  width:4rem;
+  margin:1rem;
+}
+.options{
+  display:flex;
+  padding:1rem;
+}
+
+.options >div{
+  margin-right:2rem;
+}

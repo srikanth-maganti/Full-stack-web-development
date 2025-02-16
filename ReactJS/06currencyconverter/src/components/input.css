@@ -1,0 +1,5 @@
+.inputbox
+{
+    display:flex;
+    justify-content: space-between;
+}
