@@ -1,0 +1,121 @@
+Cohort
+
+-cors :to enable connection between frontend and backend
+In Express.js, when setting up CORS (Cross-Origin Resource Sharing) using the cors middleware, the credentials: true option is used to allow cookies, authorization headers, or TLS client certificates to be included in cross-origin requests.
+-build _ms to learn
+-while dealing money attributes use lowest level of money(paise) as javascript me float par issue hai(precision)
+
+
+project structure
+
+controllers
+	-user.controller.js
+model
+	-user.model.js
+routes
+	-user.routes.js
+utils
+	db.js
+index.js
+
+
+
+project process
+-setup
+-db
+-models
+
+
+
+user_register
+
+//data
+data send to server in the form of body or parameters
+//validation
+zod ,yup
+//check if user exist
+//create a user in database
+//create a verification token
+//save the token in database
+//send token to user through email
+ nodemailer is a library to send mails ,mailtrap is mail service for testing(resend,gmail)
+
+
+user_verify
+
+//get token from url
+//validate
+//search in db if token available
+//if available then make isverified true and verification token to null
+
+mongoose hooks
+//pre and post hooks are present in schema ,userschema.pre(method,()=>{})
+
+
+user login
+//get details
+//validate
+//serch in db
+//compare password
+//create jwt token and add it cookie
+//send userdetails,token success message
+
+
+//auth middle ware
+
+all middleware are used in routes
+event driven architecture
+
+getme
+//check user exists using req.user
+//return user
+
+logout
+//cookie(token,"")
+
+forgot password
+//get email
+//find user in db
+//reset token+ token expiry =>date()+10*60*1000
+//send mail
+
+
+reset password
+//collect token from params
+//collect password from req.body
+//find user using reset token and expiry
+//set password
+//resettoken ,expiry token --.>reset
+//save
+
+return res should be used when more code is present after that
+
+
+res.status(401).json({ message: "Unauthorized" });
+next(); // ❌ will cause "headers already sent" error
+is should not use it because middleware either send res or transfer control but in this code i am doing both right
+
+
+
+express -routing lbrary (explore it further)
+for communicating with database we use orm(prisma ,drizzle,seqelize) or odm(mongoose)
+for online sql use neon/planetscale its like mongodb atlas
+
+
+Setting PostgreSQL
+//neon doc
+//npx prisma init
+//here prisma schema created ,it will generate a client(for customized suggestions) automatically,we need to add db_url from neon
+//write schema in prisma.schema and then migrate(code file to neon cloud)
+
+
+
+database understanding
+//database are two types 1.relational 2.non relational
+//sql is language to communicate with relational db
+//to deal with relational MySQL ,postgressql are dbms
+//to deal with non relational mongodb,redis are dbms
+//Think of SQL as your language
+And DBMS as your translator who understands your language and speaks to the database system.
+
+//orm and odm are They help you interact with your database using code, instead of writing raw SQL queries or MongoDB commands.

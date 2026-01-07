@@ -1,0 +1,526 @@
+Cohort
+
+-cors :to enable connection between frontend and backend
+In Express.js, when setting up CORS (Cross-Origin Resource Sharing) using the cors middleware, the credentials: true option is used to allow cookies, authorization headers, or TLS client certificates to be included in cross-origin requests.
+-build _ms to learn
+-while dealing money attributes use lowest level of money(paise) as javascript me float par issue hai(precision)
+
+
+project structure
+
+controllers
+	-user.controller.js
+model
+	-user.model.js
+routes
+	-user.routes.js
+utils
+	db.js
+index.js
+
+
+
+project process
+-setup
+-db
+-models
+
+
+
+user_register
+
+//data
+data send to server in the form of body or parameters
+//validation
+zod ,yup
+//check if user exist
+//create a user in database
+//create a verification token
+//save the token in database
+//send token to user through email
+ nodemailer is a library to send mails ,mailtrap is mail service for testing(resend,gmail)
+
+
+user_verify
+
+//get token from url
+//validate
+//search in db if token available
+//if available then make isverified true and verification token to null
+
+mongoose hooks
+//pre and post hooks are present in schema ,userschema.pre(method,()=>{})
+
+
+user login
+//get details
+//validate
+//serch in db
+//compare password
+//create jwt token and add it cookie
+//send userdetails,token success message
+
+
+//auth middle ware
+
+all middleware are used in routes
+event driven architecture
+
+getme
+//check user exists using req.user
+//return user
+
+logout
+//cookie(token,"")
+
+forgot password
+//get email
+//find user in db
+//reset token+ token expiry =>date()+10*60*1000
+//send mail
+
+
+reset password
+//collect token from params
+//collect password from req.body
+//find user using reset token and expiry
+//set password
+//resettoken ,expiry token --.>reset
+//save
+
+return res should be used when more code is present after that
+
+
+res.status(401).json({ message: "Unauthorized" });
+next(); // ❌ will cause "headers already sent" error
+is should not use it because middleware either send res or transfer control but in this code i am doing both right
+
+
+
+express -routing lbrary (explore it further)
+for communicating with database we use orm(prisma ,drizzle,seqelize) or odm(mongoose)
+for online sql use neon/planetscale its like mongodb atlas
+
+
+Setting PostgreSQL
+//neon doc
+//npx prisma init
+//here prisma schema created ,it will generate a client(for customized suggestions) automatically,we need to add db_url from neon
+//write schema in prisma.schema and then migrate(code file to neon cloud)
+
+//npm install prisma --save-dev
+//npm install @prisma/client
+//npx prisma init
+//database url
+//schema
+
+//npx prisma migrate dev --name init
+//npx prisma generate (generate client)
+//
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+module.exports = prisma;
+
+//// index.js
+const prisma = require('./prismaClient');
+
+async function main() {
+  const users = await prisma.user.findMany();
+  console.log(users);
+}
+main();
+
+Prisma Client is an auto-generated query builder for Node.js and TypeScript, tailored to your database schema.
+
+
+
+
+database understanding
+//database are two types 1.relational 2.non relational
+//sql is language to communicate with relational db
+//to deal with relational MySQL ,postgressql are dbms
+//to deal with non relational mongodb,redis are dbms
+//Think of SQL as your language
+And DBMS as your translator who understands your language and speaks to the database system.
+
+//orm and odm are They help you interact with your database using code, instead of writing raw SQL queries or MongoDB commands.
+
+//free api for standard code reference
+
+
+
+authentication
+
+stateful and stateless
+parking lot example
+stateful --secure not scalable
+stateless --scalable
+
+openidconnect
+oauth2
+access token and refresh token
+
+
+//backend internals
+nodejs --build on v8 chrome ---> deno --> bunjs(drop in replacement(crashes )
+javascript on spider monkey(firefox)
+
+bunjs is faster 
+node creates a wrapper function and provides parameters like require,exports,module,__filename,__dirname etc
+if we run same node code in  browser it will show require not defined
+require searches the given id in node build in modules ,if not get then search in node_modules  ,./ searches in written code files
+exports is object whatever export is added into this object
+per file only one default export(module.exports) but any number of named export
+
+
+
+semantic versioning
+major --(changing exisiting functions and deleting some functions(code breaks))
+minor--(adding new functionality)
+patch-- modifying exiting(add documentation,bug fixing)
+package.json.lock--to track which library is dependent on which dependencies,maintains a heirarchy,track the versions
+
+
+we can create a server with http.createserver(handler function)
+express create a handler function on behalf of us
+app is nothing but handler function
+
+koa,fastify ,hono are alternatives of express
+build basic express
+
+node js is v8 embedded in C++
+libuv provides async i/o,thread pool
+node js singlethreaded and best for rest api
+
+
+node me ek main thread and thread pool
+main thread excection
+1 project init
+2 top level code
+	-require
+3 event  callback register
+4 event loop
+  --expired timer callback
+  --timer function i/o pooling(io callbacks)
+ --set immediate
+ --close callbacks(closing functions)
+
+if(!empty) continue event loop
+else
+break
+
+by default timer functions are handled by browser,node handles these functions in its own way
+node env different from browser
+cpu intensive tasks not run in event loop because they block the event loop so they went o thread pool and run on  worker threads if thread is not available then wait
+
+
+//mega project
+
+express-validator for verification 
+files stored in file service like cloudinary gives url
+using docker for downloading mongo,instead of connecting to mongodbatlas outside ,ssetting mongo in local with all configurations,using docker hub
+
+npm install --save-dev prettier(for colaberative work)
+.prettierrc -- to maintain standard formatting
+.prettierignore
+env
+sample env
+public --for static files
+src --source code
+segregate app and index
+dotenv.config({path:"../.env"})
+
+db connection(){
+async main()
+{ await mongoose.connect()
+}
+
+main().then().catch()
+}
+
+error standardization
+response standardization
+utils --api-response.js
+	--api-error.js
+			include stacktrace: a stack trace is a list of the method calls that the application was in the middle of when an Exception was thrown.
+
+	--constants.js  --constant not imp as env
+models
+  --take care of models 
+   --pre and post functions and methods in schema
+   --methods in models
+controllers
+	-healthcheck for load balancing,to check app running or not
+
+every controllers wrapped in asynchandler
+
+index.js in validators -- body from express validator--validators for all routes--- it returns an array   factorypattern
+validator.middleware.js--> validateREsults from express-validator 
+in routes router.router("/").get(validator(),validate,controller)
+
+mongodb performance depends on aggregation pipeline
+
+//controllers
+mailing -mailgen(mail crafting) and nodemailer(mail transfer)
+create factory function for returning object for body generator ,pass this to sendmail(options)
+options:{
+email:
+subject:
+mailgencontent:emailverificationmailgencontent(username,verificationurl) 
+}
+
+
+sendmail(options)
+{
+
+//mailgenerator for generating mail body
+//nodemailer for transferring mail
+}
+
+
+//files
+multer and express-fileuploader
+multer middleware and export upload
+
+db with analytics engine starrocks
+
+
+permissions--note can be created by some people only that why use validation middleware
+
+
+
+//type script
+type script is super set of javascript
+javacript is a loosely typed language,
+when calling a function parameters are unknown(problem in working with teams)
+typescript is javascript with types
+typescript is statically typed
+we can explicitely assign type that not allow any other type value to assign in it
+automatic debugging
+while working in teams,it is useful
+javascript -run time errors --difficult to write test cases
+typescript-- build time errors
+we cannot directly run typescript as browser supports only javascript,so we use typescript compiler to compile ts to js
+
+source code-- typescript to handle types (at compile time) 
+GitHub(ci cd)->ts compile js-->js code server
+
+
+
+typescript project boilerplate
+npm init
+tsc --init to create config which defines how to compile
+npm install  @types/node -D this package contains type defintions for node
+npm install typescript -D dev dependency 
+wiston--logger
+nullish coalition
+========================================================================================================================================
+
+//tailwind
+-utility first 
+-just in time compiler -- update on the go--performance--generate what u need
+-mobile first
+
+
+npx serve
+git diagram to showcase repo
+spline,shadcn,
+
+====================================================================================================================================
+//react big picture
+
+server send html ,css,js(server side rendering) to browser,then it render the page(client side rendering)
+normally server send js to browser ,then browser renders html ,css itself ,it becomes overhead to client ,so server doing some rendering and client doing some rendering
+rendering means building the page
+
+react --pure client side
+nextjs==pure server side
+
+vite --react-->js --> nextjs
+
+className --> actually class becomes className while rendering
+
+
+routing 
+wrap browserrouter to app
+import route and routes write routes in browserrouter
+
+signin component
+	-make appi call
+	-respond based on data
+api call separate file --custom fetch in services folder
+	--ceate a class and methods for each operation
+	--singleton pattern 
+use object for fetch calling
+
+
+-----------------------------------------------------------------
+
+for debugging in signup page load all vars in a div 
+browser prevent access if cors not match,request even not reach backend
+in backend cors origin is * then 1.if frontend credentials -include then wont work ,if no credentials then work
+
+client side react --  server send js to browser then browser excecute
+browser provide an api to access local storage
+
+
+React: Defines your UI components and logic
+ReactDOM: Takes those components and renders them to the screen
+
+React is a JavaScript library used to build user interfaces. It can be added to a project either by installing it via npm (Node.js package manager) or by including it directly through a CDN <script> tag in an HTML file.
+
+Once included, you can use React to define UI components using either:
+
+React.createElement() (low-level API), or
+
+JSX, which gets compiled to createElement() calls.
+
+Then, ReactDOM (another package) is responsible for rendering these React components to the actual browser DOM, allowing users to see and interact with the interface.
+
+react component from scratch
+
+react dom -- react extension in browser
+onclick runs on clientside
+								
+---------------------------------------------------react using cdn-------------------------------
+react 18unpkg
+react 19esm
+
+react library
+unpkg to setup react (script from unpkg --react and react dom)  --> write classic react
+
+difficult to write react purely in js
+for html in js we use babel
+
+in script type=text/babel
+then jsx code
+
+
+----------------------------------formatting basics
+
+
+use prettier
+.prettierrc
+.prettierignore
+format in scripts "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,html}\""        biome (alternative)
+npm run format
+
+
+-------------------------------
+linting ---give warnings for wrong code patterns,potential bugs ,code quality etc
+npm i --save-d eslint 
+npx eslint --init 
+
+--------------------------------------------------------------react using npm------------------------------------------------------------
+
+npm i react react-dom
+
+javascript bundler esbuild,rollup,vite,webpack,parcel,snowpack,rspack(A bundler is a tool that collects your project's source code, dependencies, and assets, and bundles them into optimized files (usually a single or few .js, .css, etc. files) that can be efficiently run in the browser or server.)
+
+npm install --save-dev vite @vitejs/plugin-react
+vite.config.js
+vite rules
+--src
+--jsx
+scripts--lo vite
+
+Cjs error ==in script type=module
+
+
+-------------------------------
+web requests
+dev 
+proxy 
+ -target:"local host"
+ -originchange:true
+A proxy lets the frontend forward API requests to the backend as if they're from the same origin, avoiding CORS altogether.
+
+in vite config 
+server:{
+proxy:{
+	"/api":{
+		target:,
+		changeOrigin:
+	}
+}
+}
+
+
+prod
+cors
+
+
+
+how react works
+first paint
+-page loading 
+	-about to load
+	-loading
+	-loaded
+	-removed   -- in react class based components-- Componentdidmount are methods etc-- to work with these methods  we use useeffect hook
+
+ React gives you useEffect(), which is a hook that can simulate lifecycle behavior.
+
+useEffect(()=>{
+
+return ()=>{}  //clean up function
+
+
+
+
+},[])-->dependency array
+
+
+
+
+
+//redis acts as wrapper around primary memory
+//postgres acts as wrapper around secondary memory
+//redis key-value store
+//distriuted cache and message broker
+//optional durability
+
+if u use local cacheing --manual clear,lru lot of headache
+so use redis
+
+dockercompose for redis server running   docker compose up -d
+to interact with redis use ioredis
+
+export PORT=8000 && npm run dev
+valkey--used by amazon is dropin replacement of redis
+redis docs
+rate limiter middleware using redis
+
+redis optimizes servers
+database not dsgned for high throughput system-> bottleneck --for example lack of request of live location of Zomato riders to database---redis collect those as stream and save in batches into database---prevents fast and direct data flow into database (database down)
+
+pm2-automatically reload application when it crashes,with built in load balancer
+
+scaling down is biggest problem in load balancing--since users lost connection
+two types of database maintainence--active and cold
+
+
+sockets
+normally client initiate a connection  after req-res cycle client close connection --what about chat application
+if one user change the data it should be visible to all user in real time--
+solution 1 polling ->continues requeests but overhead that is closing and opening connection
+solution 2--open request with header containing wb req -do not close it ,double duplex
+
+use socket.io a wrapper around plain web socket
+
+do not use socket on top of express ,seprate express from http server use socket on top of http
+
+in backend import socket and create socket server add to http i.e i0.attach     cleint==socket
+connect to client io.on()
+
+in frontend use cdn or srript and send a connection request 
+socket io par large data nahi chalega,,socket io is nothing but polling on demand,whenver data changes server sends a signal to client and client get request to get updated data
+
+http-->express elago websockets -->socketio
+
+socketio -->elysia
+
+bun comes with aws
+
+kafka is alternative for redis streams
+
